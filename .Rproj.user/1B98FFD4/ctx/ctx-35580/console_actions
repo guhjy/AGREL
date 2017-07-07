@@ -1,0 +1,40 @@
+{
+    "data" : [
+        "\nR version 3.3.2 (2016-10-31) -- \"Sincere Pumpkin Patch\"\nCopyright (C) 2016 The R Foundation for Statistical Computing\nPlatform: x86_64-w64-mingw32/x64 (64-bit)\n\nR is free software and comes with ABSOLUTELY NO WARRANTY.\nYou are welcome to redistribute it under certain conditions.\nType 'license()' or 'licence()' for distribution details.\n\nR is a collaborative project with many contributors.\nType 'contributors()' for more information and\n'citation()' on how to cite R or R packages in publications.\n\nType 'demo()' for some demos, 'help()' for on-line help, or\n'help.start()' for an HTML browser interface to help.\nType 'q()' to quit R.\n\n",
+        "\n#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#\n\n   Welcome to R Bavo!!! Are you excited for another day of programming in R?! I sure am, so wake up and let us begin!!! =D\n\n                                   And remember, never go full retard!! \n\n#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#\n\n\n Quote of the day: \n\nThat's a casual model, not a causal model - you can tell the difference by\nlooking for the word \"excel\".\n   -- Hadley Wickham (commenting on an Excel chart showing student's SAT score\n      increases with family income, without considering further covariates)\n      http://twitter.com/#!/hadleywickham (February 2012)\n\n",
+        "[Workspace loaded from C:/Users/u0095171/Google Drive/werk UZ Leuven_acer/Statistical programs/R/packages R/building packages/AGREL/.RData]\n\n",
+        "> ",
+        "value <- 1",
+        "> ",
+        "cat(paste(\"\\n\\nCohen's Kappa = \",value,\"\\n\\n\",sep=\"\"))",
+        "\n\nCohen's Kappa = 1\n\n\nRestarting R session...\n\n",
+        "> ",
+        "library(AGREL)",
+        "Loading required package: doParallel\n",
+        "Loading required package: foreach\n",
+        "foreach: simple, scalable parallel programming from Revolution Analytics\nUse Revolution R for scalability, fault tolerance and more.\nhttp://www.revolutionanalytics.com\n",
+        "Loading required package: iterators\n",
+        "Loading required package: parallel\n",
+        "Loading required package: bootstrap\n",
+        "\nRestarting R session...\n\n\nRestarting R session...\n\n"
+    ],
+    "type" : [
+        2,
+        2,
+        2,
+        0,
+        1,
+        0,
+        1,
+        2,
+        0,
+        1,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        2
+    ]
+}

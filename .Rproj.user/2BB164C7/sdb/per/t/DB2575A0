@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "#' Calculating agreement for dichotomous variables.\n#'\n#' Function to calculate specific agreement and overall proportion of agreement for dichotomous variables.\n#'\n#' @param ratings A dataframe or matrix of N x P with N the number of observations and P the number of raters.\n#' @param CI Logical, indicates if confidence intervals have to be calculated\n#' @param ConfLevel The confidence level to be used in calculating the confidence intervals. Possible values\n#' are \\code{\"continuity\"}, \\code{\"Fleiss\"} and \\code{\"bootstrap\"}.\n#' @param correction Method of calculating the confidence intervals (de Vet et al., 2006).\n#' @param Parallel Logical, indicates if parallel computing has to be used to compute the confidence intervals.\n#' Implemented only when using bootstrapping to calculate the confidence intervals.\n#' @param no_cores Number of cores if parallel computing is used. Default is 1 core less than the number of\n#' cores present.\n#'\n#' @return A list with the following components:\n#' @return \\item{SumTable}{The summed table as defined in the article of de Vet et al. (2006)}\n#' @return \\item{ObservedAgreem}{The overall proportion of agreement (with CI).}\n#' @return \\item{SpecificAgreem}{The specific agreement for each of the categories (with CIs).}\n#' @references De Vet HCW, Mokkink LB, Terwee CB, Hoekstra OS, Knol DL. Clinicians are\n#' right not to like Cohen’s k. \\emph{BMJ} 2013;346:f2125.\n#' @references de Vet, H.C.W., Terwee C.B., Knol, D.L., Bouter, L.M. (2006). When to use agreement\n#' versus reliability measures. \\emph{Journal of Clinical Epidemiology}, Vol.59(10), pp.1033-1039\n#'\n#' @details This function is based on the functions as given in the appendix of the article of de Vet et al. (2006).\n#' @export\n#'\n#' @examples\n#' # Load data\n#' data(Agreement_deVetArticle)\n#' Df = Agreement_deVetArticle\n#'\n#' DiagnosticAgreement.deVet(Df)\nDiagnosticAgreement.deVet <- function(ratings, CI = T, ConfLevel = 0.95, correction=c(\"continuity\",\"Fleiss\", \"bootstrap\"),\n                                      Parallel = F, no_cores = detectCores() - 1){\n  if(length(unique(unlist(ratings)))>2) stop(\"Multinomial variable (number of unique values > 2). Consider using PA.matrix\")\n  if(is.matrix(ratings)) ratings = as.data.frame(ratings)\n  correction = match.arg(correction)\n  SumTab     = sumtable(ratings)\n  AgreemTab  = Agreement(SumTab)\n  AgreemTab  = SpecAgreem(AgreemTab)\n  if(CI) AgreemTab  = CIAgreem(AgreemTab, level=ConfLevel, AgreemStat = \"all\", correction=correction,\n                               Parallel=Parallel, no_cores = co_cores)\n  return(AgreemTab)\n}\n",
+    "created" : 1491578726140.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "880042693",
+    "id" : "DB2575A0",
+    "lastKnownWriteTime" : 1491587389,
+    "last_content_update" : 1491587389366,
+    "path" : "C:/Users/u0095171/Google Drive/werk UZ Leuven_acer/Statistical programs/R/packages R/building packages/AGREL_Github/R/DiagnosticAgreement.deVet.R",
+    "project_path" : "R/DiagnosticAgreement.deVet.R",
+    "properties" : {
+    },
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

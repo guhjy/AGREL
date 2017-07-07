@@ -1,0 +1,9 @@
+#exportPattern("^[[:alpha:]]+")
+export(AgreemGeneralizedVector, BAplotMultipleR, CohenK, ConfintJack, DiagnosticAgreement.deVet, FleissK, Kappa.Matrix, TransfData)
+importFrom(psych, ICC)
+importFrom("graphics", "abline", "lines", "plot", "points")
+importFrom("stats", "addmargins", "aov", "na.omit", "pnorm", "pt",
+             "qnorm", "qt", "quantile", "reshape", "sd", "var")
+importFrom("utils", "combn")
+import(doParallel)
+import(bootstrap)
