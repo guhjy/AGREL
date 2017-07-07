@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "print.AgreementTable <- function(x,...){\n  cat(\"\\n#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#\\n\")\n  cat(\"#          Agreement           #\\n\")\n  cat(\"#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#\\n\")\n  cat(paste(\"\\n- Number of raters =\",x$nraters,\"\\n\\n\"))\n  cat(paste(\"- Sample size =\",x$N,\"\\n\\n\"))\n  cat(\"\\n- Summed table:\\n\\n\")\n  print(x$SumTable)\n  if(any(class(x)%in%\"ObservedAgreem\")){\n    cat(\"\\n\\n- Observed Agreement:\\n\\n\")\n    print(x$ObservedAgreem)\n  }\n  if(any(class(x)%in%\"SpecificAgreem\")){\n    cat(\"\\n\\n- Specific Agreement:\\n\\n\")\n    print(x$SpecificAgreem)\n  }\n}\n\nprint.AgreemGeneralizedVector <- function(x,...){\n  cat(\"\\n#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#\\n\")\n  cat(\"# Agreement for multinomial variables #\\n\")\n  cat(\"#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#\\n\")\n  cat(paste(\"\\n- Number of raters =\",x$nraters,\"\\n\\n\"))\n  cat(paste(\"- Sample size =\",x$N,\"\\n\\n\"))\n  cat(paste(\"- Overall agreement =\", round(x$OverallAgreement, 3)))\n  cat(\"\\n\\n- Specific agreement:\\n\\n\")\n  print(x$Ps)\n}\n\n\nprint.CohenK <- function(x,...){\n  cat(\"\\n#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#\\n\")\n  cat(\"#       Cohen's Kappa          #\\n\")\n  cat(\"#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#\\n\")\n  cat(paste(\"\\n- Number of raters =\",x$nraters,\"\\n\\n\"))\n  cat(paste(\"- Sample size =\",nrow(x$ratings),\"\\n\\n\"))\n  cat(paste(\"- Cohen's Kappa =\",round(x$value,3),\"\\n\\n\"))\n  cat('- Overall proportion of agreement:',x$Po,'\\n\\n')\n  cat('- Proportion chance agreement:',x$Pe,'\\n\\n')\n  cat(paste(\"- Used weights = \", x$weights,\"\\n\\n\"))\n}\n\nprint.FleissK <- function(x,...){\n    cat(\"\\n#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#\\n\")\n    cat(\"#  Fleiss' Kappa Coefficient  #\\n\")\n    cat(\"#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#\\n\")\n    cat(paste(\"\\n- Number of raters =\",x$nraters,\"\\n\\n\"))\n    cat(paste(\"- Sample size =\",nrow(x$ratings),\"\\n\\n\"))\n    cat(paste(\"- Fleiss' Kappa =\",round(x$value,3),\"\\n\\n\"))\n    cat('- Overall proportion of agreement:',x$Po,'\\n\\n')\n    cat('- Proportion chance agreement:',x$Pe,'\\n\\n')\n    if (x$weights!=\"unweighted\") {\n      cat('\\n')\n      if (!is.numeric(x$weights)) {\n        cat('Weights: ', x$weights,'\\n')\n        cat('---------------------------\\n')\n      }\n      else{\n        cat('Weights: Custom Weights\\n')\n        cat('---------------------------\\n')\n      }\n      print(x$WeightsMatrix)\n    }\n\n}\n\nprint.BAplotMultipleR <- function(x, ...){\n  cat(\"\\nAnova summary:\\n\")\n  print(x$AnovaSummary)\n  print(x$ICC)\n}\n",
+    "created" : 1499440157435.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3571632804",
+    "id" : "2D14A62A",
+    "lastKnownWriteTime" : 1499443854,
+    "last_content_update" : 1499443854535,
+    "path" : "~/GitHub/AGREL/R/print.functions.R",
+    "project_path" : "R/print.functions.R",
+    "properties" : {
+    },
+    "relative_order" : 5,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

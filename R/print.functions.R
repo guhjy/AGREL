@@ -16,21 +16,6 @@ print.AgreementTable <- function(x,...){
   }
 }
 
-print.AgreemGeneralized <- function(x,...){
-  cat("\n#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#\n")
-  cat("# Agreement for multinomial variables #\n")
-  cat("#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#\n")
-  cat(paste("\n- Number of raters =",x$nraters,"\n\n"))
-  cat(paste("- Sample size =",x$N,"\n\n"))
-  cat(paste("- Overall agreement =", round(x$OverallAgreement, 3)))
-  cat("\n\n- Specific agreement matrix:\n\n")
-  print(x$PAMatrix)
-  if(any(names(x)=="SpecificAgreemCI")){
-  cat("\n\n- Specific agreement with CIs:\n\n")
-    print(x$SpecificAgreemCI)
-  }
-}
-
 print.AgreemGeneralizedVector <- function(x,...){
   cat("\n#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#\n")
   cat("# Agreement for multinomial variables #\n")

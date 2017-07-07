@@ -1,5 +1,6 @@
 \name{AGREL-package}
 \alias{AGREL-package}
+\alias{AGREL}
 \docType{package}
 \title{
 \packageTitle{AGREL}
@@ -53,7 +54,6 @@ diagnosis. \emph{Journal of Psychiatric Research}, Vol.17(4), pp.335-342
   \code{\link{DiagnosticAgreement.deVet}}
   \code{\link{FleissK}}
   \code{\link{Kappa.Matrix}}
-  \code{\link{AGREL}}
 }
 \examples{
 # Load data
